@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  tripi-backend:
+    image: tripi-backend:latest
+    build:
+      context: ./tripi-backend
+      dockerfile: Dockerfile
+    ports:
+      - 0.0.0.0:8080:8080/tcp
+
+  tripi-img-crawler:
+    image: tripi-img-crawler:latest
+    build:
+      context: ./tripi-image-crawler
+      dockerfile: Dockerfile
+    ports:
+      - 0.0.0.0:8081:8081/tcp
